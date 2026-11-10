@@ -1,0 +1,26 @@
+{
+  "train": {
+    "total_utterances": 9989,
+    "missing_audio_count": 0,
+    "missing_video_count": 9989,
+    "text_dim": 768,
+    "audio_dim": 128,
+    "video_dim": 128
+  },
+  "dev": {
+    "total_utterances": 1109,
+    "missing_audio_count": 1109,
+    "missing_video_count": 1109,
+    "text_dim": 768,
+    "audio_dim": 128,
+    "video_dim": 128
+  },
+  "test": {
+    "total_utterances": 2610,
+    "missing_audio_count": 2610,
+    "missing_video_count": 2610,
+    "text_dim": 768,
+    "audio_dim": 128,
+    "video_dim": 128
+  }
+}

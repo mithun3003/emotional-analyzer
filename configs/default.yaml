@@ -1,0 +1,54 @@
+# Configuration for Interpretable Contextual Semantic Analysis of Multimodal Emotions for Therapy Support
+
+project:
+  name: "emotion-therapy-support"
+  disclaimer: "Decision-support information only. Not a diagnosis or a replacement for a qualified mental-health professional."
+
+data:
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  features_dir: "data/features"
+  train_csv: "data/raw/train_sent_emo.csv"
+  dev_csv: "data/raw/dev_sent_emo.csv"
+  test_csv: "data/raw/test_sent_emo.csv"
+  archive_zip: "archive.zip"
+  max_text_len: 50
+  sample_rate: 16000
+
+model:
+  emotions:
+    - "anger"
+    - "disgust"
+    - "fear"
+    - "joy"
+    - "neutral"
+    - "sadness"
+    - "surprise"
+  num_classes: 7
+  d_model: 128
+  n_heads: 4
+  text_dim: 768
+  audio_dim: 128
+  video_dim: 128
+  dropout: 0.2
+  use_te_attention: true
+  use_dialogue_graph: true
+  past_window: 4
+  future_window: 1
+
+train:
+  seed: 42
+  seeds: [42, 43, 44]
+  batch_size: 16
+  lr: 0.0001
+  weight_decay: 0.00001
+  epochs: 30
+  early_stopping_patience: 6
+  loss_type: "weighted_ce" # options: "weighted_ce", "ce"
+  device: "auto"
+
+outputs:
+  checkpoints_dir: "outputs/checkpoints"
+  metrics_dir: "outputs/metrics"
+  figures_dir: "outputs/figures"
+  docs_dir: "docs"

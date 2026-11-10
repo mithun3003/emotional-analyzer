@@ -1,0 +1,122 @@
+{
+  "splits": {
+    "train": {
+      "csv_path": "data\\raw\\train_sent_emo.csv",
+      "num_utterances": 9989,
+      "num_dialogues": 1038,
+      "num_speakers": 260,
+      "emotion_counts": {
+        "neutral": 4710,
+        "joy": 1743,
+        "surprise": 1205,
+        "anger": 1109,
+        "sadness": 683,
+        "disgust": 271,
+        "fear": 268
+      },
+      "emotion_percentages": {
+        "neutral": 47.15,
+        "joy": 17.45,
+        "surprise": 12.06,
+        "anger": 11.1,
+        "sadness": 6.84,
+        "disgust": 2.71,
+        "fear": 2.68
+      }
+    },
+    "dev": {
+      "csv_path": "data\\raw\\dev_sent_emo.csv",
+      "num_utterances": 1109,
+      "num_dialogues": 114,
+      "num_speakers": 47,
+      "emotion_counts": {
+        "neutral": 470,
+        "joy": 163,
+        "anger": 153,
+        "surprise": 150,
+        "sadness": 111,
+        "fear": 40,
+        "disgust": 22
+      },
+      "emotion_percentages": {
+        "neutral": 42.38,
+        "joy": 14.7,
+        "anger": 13.8,
+        "surprise": 13.53,
+        "sadness": 10.01,
+        "fear": 3.61,
+        "disgust": 1.98
+      }
+    },
+    "test": {
+      "csv_path": "data\\raw\\test_sent_emo.csv",
+      "num_utterances": 2610,
+      "num_dialogues": 280,
+      "num_speakers": 100,
+      "emotion_counts": {
+        "neutral": 1256,
+        "joy": 402,
+        "anger": 345,
+        "surprise": 281,
+        "sadness": 208,
+        "disgust": 68,
+        "fear": 50
+      },
+      "emotion_percentages": {
+        "neutral": 48.12,
+        "joy": 15.4,
+        "anger": 13.22,
+        "surprise": 10.77,
+        "sadness": 7.97,
+        "disgust": 2.61,
+        "fear": 1.92
+      }
+    }
+  },
+  "total_utterances": 13708,
+  "total_dialogues": 1432,
+  "class_imbalance": {},
+  "modalities": {
+    "text": {
+      "status": "Available",
+      "coverage": "100% across train, dev, and test splits",
+      "source": "Official MELD train/dev/test CSV transcripts"
+    },
+    "audio": {
+      "status": "Pre-extracted embeddings available for train (1611-d in archive.zip); synthetic/masking for missing raw wavs",
+      "archive_embedding_dim": 1611,
+      "raw_video_available": false
+    },
+    "video": {
+      "status": "Raw video clips not provided in archive.zip; using modality masking (missing_video=True) with fallback frame embeddings",
+      "raw_video_available": false
+    },
+    "video_audit": {
+      "raw_tar_present": false,
+      "video_folders_present": {
+        "train": false,
+        "dev": false,
+        "test": false
+      },
+      "archive_zip_present": true
+    },
+    "archive_contents": [
+      {
+        "file": "audi_embeddings.pkl",
+        "size_mb": 123.11
+      },
+      {
+        "file": "text_embeddings.pkl",
+        "size_mb": 3746.3
+      },
+      {
+        "file": "text_encodings_reduced.pkl",
+        "size_mb": 61.72
+      },
+      {
+        "file": "train_sent_emo.csv",
+        "size_mb": 1.05
+      }
+    ]
+  }
+}
